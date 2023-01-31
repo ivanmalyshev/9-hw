@@ -37,19 +37,19 @@ echo 'import datetime' >> /etc/zabbix/test_python_script.py
 echo 'import sys' >> /etc/zabbix/test_python_script.py
 echo 'import os' >> /etc/zabbix/test_python_script.py
 echo 'import re' >> /etc/zabbix/test_python_script.py
-echo 'if (sys.argv[1] == '1' ):' >> /etc/zabbix/test_python_script.py
+echo 'if (sys.argv[1] == "1" ):' >> /etc/zabbix/test_python_script.py
 echo ' print("Ivan Malyshev")' >> /etc/zabbix/test_python_script.py
-echo 'elif (sys.argv[1] == '2'):' >> /etc/zabbix/test_python_script.py
+echo 'elif (sys.argv[1] == "2"):' >> /etc/zabbix/test_python_script.py
 echo ' time=datetime.datetime.now()' >> /etc/zabbix/test_python_script.py
 echo ' print(time)' >> /etc/zabbix/test_python_script.py
-echo 'elif (sys.argv[1] == '-ping'): # Если -ping' >> /etc/zabbix/test_python_script.py
-echo ' result=os.popen("ping -c 1 " + sys.argv[2]).read() # Делаем пинг по заданному адресу' >> /etc/zabbix/test_python_script.py
-echo ' result=re.findall(r"time=(.*) ms", result) # Выдёргиваем из результата время' >> /etc/zabbix/test_python_script.py 
-echo ' print(result[0]) # Выводим результат в консоль' >> /etc/zabbix/test_python_script.py
-echo 'elif (sys.argv[1] == '-simple_print'): # Если simple_print' >> /etc/zabbix/test_python_script.py
-echo ' print(sys.argv[2]) # Выводим в консоль содержимое sys.arvg[2]' >> /etc/zabbix/test_python_script.py
-echo 'else: # Во всех остальных случаях' >> /etc/zabbix/test_python_script.py
-echo ' print(f"unknown input: {sys.argv[1]}") # Выводим непонятый запрос в консоль.' >> /etc/zabbix/test_python_script.py
+echo 'elif (sys.argv[1] == "-ping"):' >> /etc/zabbix/test_python_script.py
+echo ' result=os.popen("ping -c 1 " + sys.argv[2]).read()' >> /etc/zabbix/test_python_script.py
+echo ' result=re.findall(r"time=(.*) ms", result)' >> /etc/zabbix/test_python_script.py 
+echo ' print(result[0])' >> /etc/zabbix/test_python_script.py
+echo 'elif (sys.argv[1] == "-simple_print"):' >> /etc/zabbix/test_python_script.py
+echo ' print(sys.argv[2])' >> /etc/zabbix/test_python_script.py
+echo 'else:' >> /etc/zabbix/test_python_script.py
+echo ' print(f"unknown input: {sys.argv[1]}")' >> /etc/zabbix/test_python_script.py
 fi
 
 
